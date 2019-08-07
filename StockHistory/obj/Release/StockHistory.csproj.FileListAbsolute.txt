@@ -1,0 +1,6 @@
+C:\Users\nipunu\Desktop\intro-async-parallel-dotnet4\materials\intro-async-parallel-dotnet4-m2-tcw-exercise-files\exercise-files\before\StockHistory-Seq\StockHistory\bin\Release\StockHistory.exe
+C:\Users\nipunu\Desktop\intro-async-parallel-dotnet4\materials\intro-async-parallel-dotnet4-m2-tcw-exercise-files\exercise-files\before\StockHistory-Seq\StockHistory\bin\Release\StockHistory.pdb
+C:\Users\nipunu\Desktop\intro-async-parallel-dotnet4\materials\intro-async-parallel-dotnet4-m2-tcw-exercise-files\exercise-files\before\StockHistory-Seq\StockHistory\obj\Release\StockHistory.csprojAssemblyReference.cache
+C:\Users\nipunu\Desktop\intro-async-parallel-dotnet4\materials\intro-async-parallel-dotnet4-m2-tcw-exercise-files\exercise-files\before\StockHistory-Seq\StockHistory\obj\Release\StockHistory.csproj.CoreCompileInputs.cache
+C:\Users\nipunu\Desktop\intro-async-parallel-dotnet4\materials\intro-async-parallel-dotnet4-m2-tcw-exercise-files\exercise-files\before\StockHistory-Seq\StockHistory\obj\Release\StockHistory.exe
+C:\Users\nipunu\Desktop\intro-async-parallel-dotnet4\materials\intro-async-parallel-dotnet4-m2-tcw-exercise-files\exercise-files\before\StockHistory-Seq\StockHistory\obj\Release\StockHistory.pdb
