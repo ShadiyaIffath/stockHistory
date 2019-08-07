@@ -16,3 +16,14 @@ C:\Users\nipunu\Desktop\Lec2_Demo1.1_StockHistory-Seq\StockHistory\obj\Debug\Sto
 C:\Users\nipunu\Desktop\Lec2_Demo1.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.csproj.CoreCompileInputs.cache
 C:\Users\nipunu\Desktop\Lec2_Demo1.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.exe
 C:\Users\nipunu\Desktop\Lec2_Demo1.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.pdb
+C:\Users\cb007689\Downloads\Lec2_Demo2.1_StockHistory-Seq\Lec2_Demo2.1_StockHistory-Seq\StockHistory\bin\Debug\StockHistory.exe
+C:\Users\cb007689\Downloads\Lec2_Demo2.1_StockHistory-Seq\Lec2_Demo2.1_StockHistory-Seq\StockHistory\bin\Debug\StockHistory.pdb
+C:\Users\cb007689\Downloads\Lec2_Demo2.1_StockHistory-Seq\Lec2_Demo2.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.csprojResolveAssemblyReference.cache
+C:\Users\cb007689\Downloads\Lec2_Demo2.1_StockHistory-Seq\Lec2_Demo2.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.exe
+C:\Users\cb007689\Downloads\Lec2_Demo2.1_StockHistory-Seq\Lec2_Demo2.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.pdb
+E:\APIIT_S\2nd year\2nd sem\TBS\lab\Lec2_Demo2.1_StockHistory-Seq\StockHistory\bin\Debug\StockHistory.exe
+E:\APIIT_S\2nd year\2nd sem\TBS\lab\Lec2_Demo2.1_StockHistory-Seq\StockHistory\bin\Debug\StockHistory.pdb
+E:\APIIT_S\2nd year\2nd sem\TBS\lab\Lec2_Demo2.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.csprojAssemblyReference.cache
+E:\APIIT_S\2nd year\2nd sem\TBS\lab\Lec2_Demo2.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.csproj.CoreCompileInputs.cache
+E:\APIIT_S\2nd year\2nd sem\TBS\lab\Lec2_Demo2.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.exe
+E:\APIIT_S\2nd year\2nd sem\TBS\lab\Lec2_Demo2.1_StockHistory-Seq\StockHistory\obj\Debug\StockHistory.pdb

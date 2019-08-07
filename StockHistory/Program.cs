@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -76,58 +76,59 @@ namespace StockHistory
                 double stddev = 0;
                 double stderr = 0;
 
-                Task t1 =Task.Factory.StartNew(() =>
+                Task<decimal> t1 =Task.Factory.StartNew(() =>
                 {
-                    min = data.Prices.Min();
+                   return data.Prices.Min();
+
                 });
      
-                Task t2 = Task.Factory.StartNew(() =>
+                Task<decimal> t2 = Task.Factory.StartNew(() =>
                 {
-                    max = data.Prices.Max();
+                    return data.Prices.Max();
                 });
                 
-                 avg = data.Prices.Average();
-               
+                 
 
                 // Standard deviation:
 
 
-                Task t3 = Task.Factory.StartNew(() =>
+                Task<double> t3 = Task.Factory.StartNew(() =>
                 {
+                    avg = data.Prices.Average();
+
                     double sum = 0;
                     foreach (decimal value in data.Prices)
                     sum += Math.Pow(Convert.ToDouble(value - data.Prices.Average()), 2.0);
 
 
                
-                    stddev = Math.Sqrt(sum / N);
+                    return Math.Sqrt(sum / N);
                 });
 
+                stddev = t3.Result;
                 // Standard error:
-                Task t4 = t3.ContinueWith((previous) => 
+
+                Task<double> t4 = t3.ContinueWith((previous) => 
                 {
                     //without the continue with statement
                     //t4.Wait()
-                    stderr = stddev / Math.Sqrt(N);
+                    return stddev / Math.Sqrt(N);
                 });
-
+                
 
                 //
                 // Output:
                 //
-                t1.Wait();
-                t2.Wait();
-                t3.Wait();
-                t4.Wait();
+                
 
                 Console.WriteLine();
 				Console.WriteLine("** {0} **", data.Name);
 				Console.WriteLine("   Data source:  '{0}'", data.DataSource);
 				Console.WriteLine("   Data points:   {0:#,##0}", N);
-				Console.WriteLine("   Min price:    {0:C}", min);
-				Console.WriteLine("   Max price:    {0:C}", max);
+				Console.WriteLine("   Min price:    {0:C}", t1.Result);
+				Console.WriteLine("   Max price:    {0:C}", t2.Result);
 				Console.WriteLine("   Avg price:    {0:C}", avg);
-				Console.WriteLine("   Std dev/err:   {0:0.000} / {1:0.000}", stddev, stderr);
+				Console.WriteLine("   Std dev/err:   {0:0.000} / {1:0.000}", stddev, t4.Result);
                 
             }
 			catch (Exception ex)
