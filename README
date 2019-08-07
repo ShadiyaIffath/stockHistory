@@ -2,4 +2,5 @@ This project and the multiple branches of this project is to showw the various i
   of the Task Parallel Library in the .NET framework in C#
   
   
-This branch shows the implementation of the wait method of the task object
+This branch shows the implementation of the task<result> where a task returns variable like in methods so as to avoid race conditions
+ and reduce memory consumption.
