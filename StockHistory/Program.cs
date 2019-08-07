@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 
@@ -70,26 +70,57 @@ namespace StockHistory
 				data = DownloadData.GetHistoricalData(numYearsOfHistory);
 
 				int N = data.Prices.Count;
+                decimal min = 0;
+                decimal max = 0;
+                decimal avg = 0;
+                double stddev = 0;
+                double stderr = 0;
 
-				decimal min = data.Prices.Min();
-				decimal max = data.Prices.Max();
-				decimal avg = data.Prices.Average();
+                Task t1 =Task.Factory.StartNew(() =>
+                {
+                    min = data.Prices.Min();
+                });
+     
+                Task t2 = Task.Factory.StartNew(() =>
+                {
+                    max = data.Prices.Max();
+                });
+                
+                 avg = data.Prices.Average();
+               
 
-				// Standard deviation:
-				double sum = 0.0;
+                // Standard deviation:
 
-				foreach (decimal value in data.Prices)
-					sum += Math.Pow(Convert.ToDouble(value - avg), 2.0);
 
-				double stddev = Math.Sqrt(sum / N);
+                Task t3 = Task.Factory.StartNew(() =>
+                {
+                    double sum = 0;
+                    foreach (decimal value in data.Prices)
+                    sum += Math.Pow(Convert.ToDouble(value - data.Prices.Average()), 2.0);
 
-				// Standard error:
-				double stderr = stddev / Math.Sqrt(N);
 
-				//
-				// Output:
-				//
-				Console.WriteLine();
+               
+                    stddev = Math.Sqrt(sum / N);
+                });
+
+                // Standard error:
+                Task t4 = t3.ContinueWith((previous) => 
+                {
+                    //without the continue with statement
+                    //t4.Wait()
+                    stderr = stddev / Math.Sqrt(N);
+                });
+
+
+                //
+                // Output:
+                //
+                t1.Wait();
+                t2.Wait();
+                t3.Wait();
+                t4.Wait();
+
+                Console.WriteLine();
 				Console.WriteLine("** {0} **", data.Name);
 				Console.WriteLine("   Data source:  '{0}'", data.DataSource);
 				Console.WriteLine("   Data points:   {0:#,##0}", N);
@@ -97,7 +128,8 @@ namespace StockHistory
 				Console.WriteLine("   Max price:    {0:C}", max);
 				Console.WriteLine("   Avg price:    {0:C}", avg);
 				Console.WriteLine("   Std dev/err:   {0:0.000} / {1:0.000}", stddev, stderr);
-			}
+                
+            }
 			catch (Exception ex)
 			{
 				Console.WriteLine();
